@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate pyCoins Notebooks and TOC file &#8212; My Jupyter Book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/intro.html">
+   pyCoins
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Cryptocurrencies
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/BTC-USD.html">
+   (BTC-USD): Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/ETH-USD.html">
+   (ETH-USD): Ethereum
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bitcoin Swap
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/ETH-BTC.html">
+   (ETH-BTC): Etherum-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/LTC-BTC.html">
+   (LTC-BTC): Litecoin-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/SOL1-BTC.html">
+   (SOL1-BTC): Solana-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/ADA-BTC.html">
+   (ADA-BTC): Cardano-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/AVAX-BTC.html">
+   (AVAX-BTC): Avalanche-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/DOT1-BTC.html">
+   (DOT1-BTC): Polkadot-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/BNB-BTC.html">
+   (BNB-BTC): BinanceCoin-Bitcoin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/USDT-BTC.html">
+   (USDT-BTC): Tether-Bitcoin
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pycoins/coins/fbprophet/GROWTH_ANALYSIS.html">
+   Best Opportunity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/generate_files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/generate_files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Generate pyCoins Notebooks and TOC file
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-notebooks">
+     Generate notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-yaml-list">
+   Generate YAML list
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Generate pyCoins Notebooks and TOC file</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Generate pyCoins Notebooks and TOC file
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-notebooks">
+     Generate notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-yaml-list">
+   Generate YAML list
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="generate-pycoins-notebooks-and-toc-file">
+<h1>Generate pyCoins Notebooks and TOC file<a class="headerlink" href="#generate-pycoins-notebooks-and-toc-file" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span> <span class="k">as</span> <span class="nn">nbf</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pandas_datareader.data</span> <span class="kn">import</span> <span class="n">DataReader</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-notebooks">
+<h2>Generate notebooks<a class="headerlink" href="#generate-notebooks" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_notebook</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
+
+    <span class="c1"># Title</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;# (</span><span class="si">{ticker}</span><span class="s2">): </span><span class="si">{name}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+    <span class="c1"># Code</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">    from functions import *</span>
+<span class="s2">    collect_tune_and_predict(&#39;</span><span class="si">{ticker}</span><span class="s2">&#39;,n_ahead = 365)&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">symbol</span><span class="p">)</span>
+
+    <span class="c1"># Cells</span>
+    <span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+                <span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_code_cell</span><span class="p">(</span><span class="n">code</span><span class="p">)]</span>
+
+    <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;pycoins/coins/fbprophet/</span><span class="si">{ticker}</span><span class="s1">.ipynb&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">symbol</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">nbf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> 
+    <span class="s1">&#39;ticker&#39;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="c1"># &#39;ZRX-USD&#39;,</span>
+        <span class="c1"># &#39;1INCH-USD&#39;,</span>
+        <span class="c1"># &#39;AAVE-USD&#39;,</span>
+        <span class="c1"># &#39;ABBC-USD&#39;,</span>
+        <span class="c1"># &#39;ACT-USD&#39;,</span>
+        <span class="c1"># &#39;ADX-USD&#39;,</span>
+        <span class="c1"># &#39;AEON-USD&#39;,</span>
+        <span class="c1"># &#39;AE-USD&#39;,</span>
+        <span class="c1"># &#39;ADK-USD&#39;,</span>
+        <span class="c1"># &#39;AION-USD&#39;,</span>
+        <span class="c1"># &#39;ACH-USD&#39;,</span>
+        <span class="c1"># &#39;ALGO-USD&#39;,</span>
+        <span class="c1"># &#39;AMB-USD&#39;,</span>
+        <span class="c1"># &#39;AMP1-USD&#39;,</span>
+        <span class="c1"># &#39;ANKR-USD&#39;,</span>
+        <span class="c1"># &#39;APL-USD&#39;,</span>
+        <span class="c1"># &#39;ANT-USD&#39;,</span>
+        <span class="c1"># &#39;ARDR-USD&#39;,</span>
+        <span class="c1"># &#39;ARK-USD&#39;,</span>
+        <span class="c1"># &#39;AR-USD&#39;,</span>
+        <span class="c1"># &#39;XAS-USD&#39;,</span>
+        <span class="c1"># &#39;ATRI-USD&#39;,</span>
+        <span class="c1"># &#39;REP-USD&#39;,</span>
+        <span class="c1"># &#39;AVAX-USD&#39;,</span>
+        <span class="c1"># &#39;AXEL-USD&#39;,</span>
+        <span class="c1"># &#39;AXS-USD&#39;,</span>
+        <span class="c1"># &#39;BAL-USD&#39;,</span>
+        <span class="c1"># &#39;BNT-USD&#39;,</span>
+        <span class="c1"># &#39;BAND-USD&#39;,</span>
+        <span class="c1"># &#39;BAT-USD&#39;,</span>
+        <span class="c1"># &#39;BEAM-USD&#39;,</span>
+        <span class="c1"># &#39;BEPRO-USD&#39;,</span>
+        <span class="c1"># &#39;BHP-USD&#39;,</span>
+        <span class="c1"># &#39;BNB-USD&#39;,</span>
+        <span class="s1">&#39;BTC-USD&#39;</span><span class="p">,</span>
+        <span class="c1"># &#39;BTC2-USD&#39;,</span>
+        <span class="c1"># &#39;BCH-USD&#39;,</span>
+        <span class="c1"># &#39;BCD-USD&#39;,</span>
+        <span class="c1"># &#39;BTG-USD&#39;,</span>
+        <span class="c1"># &#39;BSV-USD&#39;,</span>
+        <span class="c1"># &#39;BTS-USD&#39;,</span>
+        <span class="c1"># &#39;BTT1-USD&#39;,</span>
+        <span class="c1"># &#39;BLOCK-USD&#39;,</span>
+        <span class="c1"># &#39;BCN-USD&#39;,</span>
+        <span class="c1"># &#39;BTM-USD&#39;,</span>
+        <span class="c1"># &#39;ADA-USD&#39;,</span>
+        <span class="c1"># &#39;CTSI-USD&#39;,</span>
+        <span class="c1"># &#39;CELR-USD&#39;,</span>
+        <span class="c1"># &#39;CELO-USD&#39;,</span>
+        <span class="c1"># &#39;CEL-USD&#39;,</span>
+        <span class="c1"># &#39;LINK-USD&#39;,</span>
+        <span class="c1"># &#39;PCX-USD&#39;,</span>
+        <span class="c1"># &#39;XCH-USD&#39;,</span>
+        <span class="c1"># &#39;CHZ-USD&#39;,</span>
+        <span class="c1"># &#39;CVC-USD&#39;,</span>
+        <span class="c1"># &#39;CLV-USD&#39;,</span>
+        <span class="c1"># &#39;C98-USD&#39;,</span>
+        <span class="c1"># &#39;CET-USD&#39;,</span>
+        <span class="c1"># &#39;COLX-USD&#39;,</span>
+        <span class="c1"># &#39;COMP-USD&#39;,</span>
+        <span class="c1"># &#39;DAG-USD&#39;,</span>
+        <span class="c1"># &#39;CTXC-USD&#39;,</span>
+        <span class="c1"># &#39;ATOM1-USD&#39;,</span>
+        <span class="c1"># &#39;COTI-USD&#39;,</span>
+        <span class="c1"># &#39;CCXX-USD&#39;,</span>
+        <span class="c1"># &#39;XCP-USD&#39;,</span>
+        <span class="c1"># &#39;CTC1-USD&#39;,</span>
+        <span class="c1"># &#39;CRU-USD&#39;,</span>
+        <span class="c1"># &#39;CRO-USD&#39;,</span>
+        <span class="c1"># &#39;CUDOS-USD&#39;,</span>
+        <span class="c1"># &#39;CRV-USD&#39;,</span>
+        <span class="c1"># &#39;CUT-USD&#39;,</span>
+        <span class="c1"># &#39;CMT1-USD&#39;,</span>
+        <span class="c1"># &#39;DAI1-USD&#39;,</span>
+        <span class="c1"># &#39;DMCH-USD&#39;,</span>
+        <span class="c1"># &#39;DASH-USD&#39;,</span>
+        <span class="c1"># &#39;MANA-USD&#39;,</span>
+        <span class="c1"># &#39;DTEP-USD&#39;,</span>
+        <span class="c1"># &#39;DCR-USD&#39;,</span>
+        <span class="c1"># &#39;DFI-USD&#39;,</span>
+        <span class="c1"># &#39;DCN-USD&#39;,</span>
+        <span class="c1"># &#39;DERO-USD&#39;,</span>
+        <span class="c1"># &#39;DMD-USD&#39;,</span>
+        <span class="c1"># &#39;DGB-USD&#39;,</span>
+        <span class="c1"># &#39;DGD-USD&#39;,</span>
+        <span class="c1"># &#39;DNT-USD&#39;,</span>
+        <span class="c1"># &#39;DIVI-USD&#39;,</span>
+        <span class="c1"># &#39;DOGE-USD&#39;,</span>
+        <span class="c1"># &#39;OMI-USD&#39;,</span>
+        <span class="c1"># &#39;WOZX-USD&#39;,</span>
+        <span class="c1"># &#39;EMC2-USD&#39;,</span>
+        <span class="c1"># &#39;ELA-USD&#39;,</span>
+        <span class="c1"># &#39;ETN-USD&#39;,</span>
+        <span class="c1"># &#39;EGLD-USD&#39;,</span>
+        <span class="c1"># &#39;NRG-USD&#39;,</span>
+        <span class="c1"># &#39;EWT-USD&#39;,</span>
+        <span class="c1"># &#39;ENJ-USD&#39;,</span>
+        <span class="c1"># &#39;EOS-USD&#39;,</span>
+        <span class="c1"># &#39;ERG-USD&#39;,</span>
+        <span class="s1">&#39;ETH-USD&#39;</span><span class="p">,</span>
+        <span class="c1"># &#39;ETC-USD&#39;,</span>
+        <span class="c1"># &#39;FCT-USD&#39;,</span>
+        <span class="c1"># &#39;FTM-USD&#39;,</span>
+        <span class="c1"># &#39;FET-USD&#39;,</span>
+        <span class="c1"># &#39;FO-USD&#39;,</span>
+        <span class="c1"># &#39;FIL-USD&#39;,</span>
+        <span class="c1"># &#39;FIO-USD&#39;,</span>
+        <span class="c1"># &#39;FIRO-USD&#39;,</span>
+        <span class="c1"># &#39;FLOW1-USD&#39;,</span>
+        <span class="c1"># &#39;FRONT-USD&#39;,</span>
+        <span class="c1"># &#39;FTT1-USD&#39;,</span>
+        <span class="c1"># &#39;FUN-USD&#39;,</span>
+        <span class="c1"># &#39;FSN-USD&#39;,</span>
+        <span class="c1"># &#39;GAME-USD&#39;,</span>
+        <span class="c1"># &#39;GAS-USD&#39;,</span>
+        <span class="c1"># &#39;GNO-USD&#39;,</span>
+        <span class="c1"># &#39;GO-USD&#39;,</span>
+        <span class="c1"># &#39;GLM-USD&#39;,</span>
+        <span class="c1"># &#39;GRIN-USD&#39;,</span>
+        <span class="c1"># &#39;GRS-USD&#39;,</span>
+        <span class="c1"># &#39;NLG-USD&#39;,</span>
+        <span class="c1"># &#39;GXC-USD&#39;,</span>
+        <span class="c1"># &#39;HNS-USD&#39;,</span>
+        <span class="c1"># &#39;ONE2-USD&#39;,</span>
+        <span class="c1"># &#39;XHV-USD&#39;,</span>
+        <span class="c1"># &#39;HBAR-USD&#39;,</span>
+        <span class="c1"># &#39;HNT1-USD&#39;,</span>
+        <span class="c1"># &#39;HEX-USD&#39;,</span>
+        <span class="c1"># &#39;HPB-USD&#39;,</span>
+        <span class="c1"># &#39;HIVE-USD&#39;,</span>
+        <span class="c1"># &#39;HOT1-USD&#39;,</span>
+        <span class="c1"># &#39;ZEN-USD&#39;,</span>
+        <span class="c1"># &#39;HTML-USD&#39;,</span>
+        <span class="c1"># &#39;HC-USD&#39;,</span>
+        <span class="c1"># &#39;ICX-USD&#39;,</span>
+        <span class="c1"># &#39;IDNA-USD&#39;,</span>
+        <span class="c1"># &#39;RLC-USD&#39;,</span>
+        <span class="c1"># &#39;ICP1-USD&#39;,</span>
+        <span class="c1"># &#39;IOST-USD&#39;,</span>
+        <span class="c1"># &#39;MIOTA-USD&#39;,</span>
+        <span class="c1"># &#39;IOTX-USD&#39;,</span>
+        <span class="c1"># &#39;IRIS-USD&#39;,</span>
+        <span class="c1"># &#39;KDA-USD&#39;,</span>
+        <span class="c1"># &#39;KAVA-USD&#39;,</span>
+        <span class="c1"># &#39;KIN-USD&#39;,</span>
+        <span class="c1"># &#39;KMD-USD&#39;,</span>
+        <span class="c1"># &#39;KSM-USD&#39;,</span>
+        <span class="c1"># &#39;LBC-USD&#39;,</span>
+        <span class="c1"># &#39;LSK-USD&#39;,</span>
+        <span class="c1"># &#39;LTC-USD&#39;,</span>
+        <span class="c1"># &#39;LCC-USD&#39;,</span>
+        <span class="c1"># &#39;LOKI-USD&#39;,</span>
+        <span class="c1"># &#39;LRC-USD&#39;,</span>
+        <span class="c1"># &#39;MAID-USD&#39;,</span>
+        <span class="c1"># &#39;MKR-USD&#39;,</span>
+        <span class="c1"># &#39;MARO-USD&#39;,</span>
+        <span class="c1"># &#39;MASS-USD&#39;,</span>
+        <span class="c1"># &#39;MATIC-USD&#39;,</span>
+        <span class="c1"># &#39;MAN-USD&#39;,</span>
+        <span class="c1"># &#39;MCO-USD&#39;,</span>
+        <span class="c1"># &#39;MED-USD&#39;,</span>
+        <span class="c1"># &#39;MLN-USD&#39;,</span>
+        <span class="c1"># &#39;META-USD&#39;,</span>
+        <span class="c1"># &#39;MHC-USD&#39;,</span>
+        <span class="c1"># &#39;MTL-USD&#39;,</span>
+        <span class="c1"># &#39;DNA1-USD&#39;,</span>
+        <span class="c1"># &#39;ETP-USD&#39;,</span>
+        <span class="c1"># &#39;MRX-USD&#39;,</span>
+        <span class="c1"># &#39;MWC-USD&#39;,</span>
+        <span class="c1"># &#39;BIP-USD&#39;,</span>
+        <span class="c1"># &#39;MIR1-USD&#39;,</span>
+        <span class="c1"># &#39;MONA-USD&#39;,</span>
+        <span class="c1"># &#39;XMR-USD&#39;,</span>
+        <span class="c1"># &#39;NMC-USD&#39;,</span>
+        <span class="c1"># &#39;NANO-USD&#39;,</span>
+        <span class="c1"># &#39;NAV-USD&#39;,</span>
+        <span class="c1"># &#39;NEBL-USD&#39;,</span>
+        <span class="c1"># &#39;NAS-USD&#39;,</span>
+        <span class="c1"># &#39;XEM-USD&#39;,</span>
+        <span class="c1"># &#39;NEO-USD&#39;,</span>
+        <span class="c1"># &#39;NVT-USD&#39;,</span>
+        <span class="c1"># &#39;CKB-USD&#39;,</span>
+        <span class="c1"># &#39;NYE-USD&#39;,</span>
+        <span class="c1"># &#39;NXS-USD&#39;,</span>
+        <span class="c1"># &#39;NIM-USD&#39;,</span>
+        <span class="c1"># &#39;NKN-USD&#39;,</span>
+        <span class="c1"># &#39;NU-USD&#39;,</span>
+        <span class="c1"># &#39;NULS-USD&#39;,</span>
+        <span class="c1"># &#39;NMR-USD&#39;,</span>
+        <span class="c1"># &#39;NXT-USD&#39;,</span>
+        <span class="c1"># &#39;ROSE-USD&#39;,</span>
+        <span class="c1"># &#39;OBSR-USD&#39;,</span>
+        <span class="c1"># &#39;GBYTE-USD&#39;,</span>
+        <span class="c1"># &#39;OMG-USD&#39;,</span>
+        <span class="c1"># &#39;RSTR-USD&#39;,</span>
+        <span class="c1"># &#39;ONT-USD&#39;,</span>
+        <span class="c1"># &#39;OXT-USD&#39;,</span>
+        <span class="c1"># &#39;PAC-USD&#39;,</span>
+        <span class="c1"># &#39;CAKE-USD&#39;,</span>
+        <span class="c1"># &#39;PART-USD&#39;,</span>
+        <span class="c1"># &#39;PI-USD&#39;,</span>
+        <span class="c1"># &#39;PPC-USD&#39;,</span>
+        <span class="c1"># &#39;PHA-USD&#39;,</span>
+        <span class="c1"># &#39;ARRR-USD&#39;,</span>
+        <span class="c1"># &#39;PIVX-USD&#39;,</span>
+        <span class="c1"># &#39;PLC-USD&#39;,</span>
+        <span class="c1"># &#39;POA-USD&#39;,</span>
+        <span class="c1"># &#39;POLIS-USD&#39;,</span>
+        <span class="c1"># &#39;DOT1-USD&#39;,</span>
+        <span class="c1"># &#39;PPT-USD&#39;,</span>
+        <span class="c1"># &#39;PZM-USD&#39;,</span>
+        <span class="c1"># &#39;PAI-USD&#39;,</span>
+        <span class="c1"># &#39;QASH-USD&#39;,</span>
+        <span class="c1"># &#39;QTUM-USD&#39;,</span>
+        <span class="c1"># &#39;QNT-USD&#39;,</span>
+        <span class="c1"># &#39;QRL-USD&#39;,</span>
+        <span class="c1"># &#39;RVN-USD&#39;,</span>
+        <span class="c1"># &#39;RAY-USD&#39;,</span>
+        <span class="c1"># &#39;REV-USD&#39;,</span>
+        <span class="c1"># &#39;RDD-USD&#39;,</span>
+        <span class="c1"># &#39;RSR-USD&#39;,</span>
+        <span class="c1"># &#39;RINGX-USD&#39;,</span>
+        <span class="c1"># &#39;RBTC-USD&#39;,</span>
+        <span class="c1"># &#39;SFT-USD&#39;,</span>
+        <span class="c1"># &#39;SALT-USD&#39;,</span>
+        <span class="c1"># &#39;SAPP-USD&#39;,</span>
+        <span class="c1"># &#39;SCP-USD&#39;,</span>
+        <span class="c1"># &#39;SRM-USD&#39;,</span>
+        <span class="c1"># &#39;SHIB-USD&#39;,</span>
+        <span class="c1"># &#39;SC-USD&#39;,</span>
+        <span class="c1"># &#39;SKL-USD&#39;,</span>
+        <span class="c1"># &#39;SOL1-USD&#39;,</span>
+        <span class="c1"># &#39;SOLVE-USD&#39;,</span>
+        <span class="c1"># &#39;SRK-USD&#39;,</span>
+        <span class="c1"># &#39;STX1-USD&#39;,</span>
+        <span class="c1"># &#39;SCC3-USD&#39;,</span>
+        <span class="c1"># &#39;XSN-USD&#39;,</span>
+        <span class="c1"># &#39;SNT-USD&#39;,</span>
+        <span class="c1"># &#39;STEEM-USD&#39;,</span>
+        <span class="c1"># &#39;SBD-USD&#39;,</span>
+        <span class="c1"># &#39;XLM-USD&#39;,</span>
+        <span class="c1"># &#39;STORJ-USD&#39;,</span>
+        <span class="c1"># &#39;STMX-USD&#39;,</span>
+        <span class="c1"># &#39;STRAX-USD&#39;,</span>
+        <span class="c1"># &#39;SERO-USD&#39;,</span>
+        <span class="c1"># &#39;SUSHI-USD&#39;,</span>
+        <span class="c1"># &#39;SXP-USD&#39;,</span>
+        <span class="c1"># &#39;SNX-USD&#39;,</span>
+        <span class="c1"># &#39;SYS-USD&#39;,</span>
+        <span class="c1"># &#39;WABI-USD&#39;,</span>
+        <span class="c1"># &#39;PAY-USD&#39;,</span>
+        <span class="c1"># &#39;LUNA1-USD&#39;,</span>
+        <span class="c1"># &#39;KRT-USD&#39;,</span>
+        <span class="c1"># &#39;USDT-USD&#39;,</span>
+        <span class="c1"># &#39;XTZ-USD&#39;,</span>
+        <span class="c1"># &#39;GRT2-USD&#39;,</span>
+        <span class="c1"># &#39;SAND-USD&#39;,</span>
+        <span class="c1"># &#39;THETA-USD&#39;,</span>
+        <span class="c1"># &#39;TFUEL-USD&#39;,</span>
+        <span class="c1"># &#39;RUNE-USD&#39;,</span>
+        <span class="c1"># &#39;TT-USD&#39;,</span>
+        <span class="c1"># &#39;TOMO-USD&#39;,</span>
+        <span class="c1"># &#39;AVA-USD&#39;,</span>
+        <span class="c1"># &#39;TRX-USD&#39;,</span>
+        <span class="c1"># &#39;TRUE-USD&#39;,</span>
+        <span class="c1"># &#39;TUSD-USD&#39;,</span>
+        <span class="c1"># &#39;TWT-USD&#39;,</span>
+        <span class="c1"># &#39;UBQ-USD&#39;,</span>
+        <span class="c1"># &#39;UMA-USD&#39;,</span>
+        <span class="c1"># &#39;UNI3-USD&#39;,</span>
+        <span class="c1"># &#39;USDC-USD&#39;,</span>
+        <span class="c1"># &#39;VAL1-USD&#39;,</span>
+        <span class="c1"># &#39;VET-USD&#39;,</span>
+        <span class="c1"># &#39;VLX-USD&#39;,</span>
+        <span class="c1"># &#39;VRA-USD&#39;,</span>
+        <span class="c1"># &#39;XVG-USD&#39;,</span>
+        <span class="c1"># &#39;VERI-USD&#39;,</span>
+        <span class="c1"># &#39;VTC-USD&#39;,</span>
+        <span class="c1"># &#39;VTHO-USD&#39;,</span>
+        <span class="c1"># &#39;VITE-USD&#39;,</span>
+        <span class="c1"># &#39;VGX-USD&#39;,</span>
+        <span class="c1"># &#39;VSYS-USD&#39;,</span>
+        <span class="c1"># &#39;WTC-USD&#39;,</span>
+        <span class="c1"># &#39;WAN-USD&#39;,</span>
+        <span class="c1"># &#39;WAVES-USD&#39;,</span>
+        <span class="c1"># &#39;WAXP-USD&#39;,</span>
+        <span class="c1"># &#39;WICC-USD&#39;,</span>
+        <span class="c1"># &#39;XWC-USD&#39;,</span>
+        <span class="c1"># &#39;WIN1-USD&#39;,</span>
+        <span class="c1"># &#39;CHI-USD&#39;,</span>
+        <span class="c1"># &#39;XNC-USD&#39;,</span>
+        <span class="c1"># &#39;XDC-USD&#39;,</span>
+        <span class="c1"># &#39;XRP-USD&#39;,</span>
+        <span class="c1"># &#39;YFI-USD&#39;,</span>
+        <span class="c1"># &#39;YOYOW-USD&#39;,</span>
+        <span class="c1"># &#39;ZANO-USD&#39;,</span>
+        <span class="c1"># &#39;ZEC-USD&#39;,</span>
+        <span class="c1"># &#39;ZEL-USD&#39;,</span>
+        <span class="c1"># &#39;ZNN-USD&#39;,</span>
+        <span class="c1"># &#39;ZIL-USD&#39;,</span>
+<span class="p">],</span> 
+    <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="c1"># &#39;0x&#39;,</span>
+        <span class="c1"># &#39;1inch&#39;,</span>
+        <span class="c1"># &#39;Aave&#39;,</span>
+        <span class="c1"># &#39;ABBCCoin&#39;,</span>
+        <span class="c1"># &#39;Achain&#39;,</span>
+        <span class="c1"># &#39;AdEx&#39;,</span>
+        <span class="c1"># &#39;Aeon&#39;,</span>
+        <span class="c1"># &#39;Aeternity&#39;,</span>
+        <span class="c1"># &#39;AidosKuneen&#39;,</span>
+        <span class="c1"># &#39;Aion&#39;,</span>
+        <span class="c1"># &#39;AlchemyPay&#39;,</span>
+        <span class="c1"># &#39;Algorand&#39;,</span>
+        <span class="c1"># &#39;Ambrosus&#39;,</span>
+        <span class="c1"># &#39;Amp&#39;,</span>
+        <span class="c1"># &#39;Ankr&#39;,</span>
+        <span class="c1"># &#39;ApolloCurrency&#39;,</span>
+        <span class="c1"># &#39;Aragon&#39;,</span>
+        <span class="c1"># &#39;Ardor&#39;,</span>
+        <span class="c1"># &#39;Ark&#39;,</span>
+        <span class="c1"># &#39;Arweave&#39;,</span>
+        <span class="c1"># &#39;Asch&#39;,</span>
+        <span class="c1"># &#39;AtariToken&#39;,</span>
+        <span class="c1"># &#39;Augur&#39;,</span>
+        <span class="c1"># &#39;Avalanche&#39;,</span>
+        <span class="c1"># &#39;AXEL&#39;,</span>
+        <span class="c1"># &#39;AxieInfinity&#39;,</span>
+        <span class="c1"># &#39;Balancer&#39;,</span>
+        <span class="c1"># &#39;Bancor&#39;,</span>
+        <span class="c1"># &#39;BandProtocol&#39;,</span>
+        <span class="c1"># &#39;BasicAttentionToken&#39;,</span>
+        <span class="c1"># &#39;Beam&#39;,</span>
+        <span class="c1"># &#39;BetProtocol&#39;,</span>
+        <span class="c1"># &#39;BHPCoin&#39;,</span>
+        <span class="c1"># &#39;BinanceCoin&#39;,</span>
+        <span class="s1">&#39;Bitcoin&#39;</span><span class="p">,</span>
+        <span class="c1"># &#39;Bitcoin2&#39;,</span>
+        <span class="c1"># &#39;BitcoinCash&#39;,</span>
+        <span class="c1"># &#39;BitcoinDiamond&#39;,</span>
+        <span class="c1"># &#39;BitcoinGold&#39;,</span>
+        <span class="c1"># &#39;BitcoinSV&#39;,</span>
+        <span class="c1"># &#39;BitShares&#39;,</span>
+        <span class="c1"># &#39;BitTorrent&#39;,</span>
+        <span class="c1"># &#39;Blocknet&#39;,</span>
+        <span class="c1"># &#39;Bytecoin&#39;,</span>
+        <span class="c1"># &#39;Bytom&#39;,</span>
+        <span class="c1"># &#39;Cardano&#39;,</span>
+        <span class="c1"># &#39;Cartesi&#39;,</span>
+        <span class="c1"># &#39;CelerNetwork&#39;,</span>
+        <span class="c1"># &#39;Celo&#39;,</span>
+        <span class="c1"># &#39;Celsius&#39;,</span>
+        <span class="c1"># &#39;Chainlink&#39;,</span>
+        <span class="c1"># &#39;ChainX&#39;,</span>
+        <span class="c1"># &#39;ChiaNetwork&#39;,</span>
+        <span class="c1"># &#39;Chiliz&#39;,</span>
+        <span class="c1"># &#39;Civic&#39;,</span>
+        <span class="c1"># &#39;Clover&#39;,</span>
+        <span class="c1"># &#39;Coin98&#39;,</span>
+        <span class="c1"># &#39;CoinExToken&#39;,</span>
+        <span class="c1"># &#39;ColossusXT&#39;,</span>
+        <span class="c1"># &#39;Compound&#39;,</span>
+        <span class="c1"># &#39;Constellation&#39;,</span>
+        <span class="c1"># &#39;Cortex&#39;,</span>
+        <span class="c1"># &#39;Cosmos&#39;,</span>
+        <span class="c1"># &#39;COTI&#39;,</span>
+        <span class="c1"># &#39;CounosX&#39;,</span>
+        <span class="c1"># &#39;Counterparty&#39;,</span>
+        <span class="c1"># &#39;Creditcoin&#39;,</span>
+        <span class="c1"># &#39;Crust&#39;,</span>
+        <span class="c1"># &#39;CryptocomCoin&#39;,</span>
+        <span class="c1"># &#39;Cudos&#39;,</span>
+        <span class="c1"># &#39;CurveDAOToken&#39;,</span>
+        <span class="c1"># &#39;CUTcoin&#39;,</span>
+        <span class="c1"># &#39;CyberMiles&#39;,</span>
+        <span class="c1"># &#39;Dai&#39;,</span>
+        <span class="c1"># &#39;DARMACash&#39;,</span>
+        <span class="c1"># &#39;Dash&#39;,</span>
+        <span class="c1"># &#39;Decentraland&#39;,</span>
+        <span class="c1"># &#39;DECOIN&#39;,</span>
+        <span class="c1"># &#39;Decred&#39;,</span>
+        <span class="c1"># &#39;DeFiChain&#39;,</span>
+        <span class="c1"># &#39;Dentacoin&#39;,</span>
+        <span class="c1"># &#39;Dero&#39;,</span>
+        <span class="c1"># &#39;Diamond&#39;,</span>
+        <span class="c1"># &#39;DigiByte&#39;,</span>
+        <span class="c1"># &#39;DigixDAO&#39;,</span>
+        <span class="c1"># &#39;district0x&#39;,</span>
+        <span class="c1"># &#39;Divi&#39;,</span>
+        <span class="c1"># &#39;Dogecoin&#39;,</span>
+        <span class="c1"># &#39;ECOMI&#39;,</span>
+        <span class="c1"># &#39;EFFORCE&#39;,</span>
+        <span class="c1"># &#39;Einsteinium&#39;,</span>
+        <span class="c1"># &#39;Elastos&#39;,</span>
+        <span class="c1"># &#39;Electroneum&#39;,</span>
+        <span class="c1"># &#39;Elrond&#39;,</span>
+        <span class="c1"># &#39;Energi&#39;,</span>
+        <span class="c1"># &#39;EnergyWebToken&#39;,</span>
+        <span class="c1"># &#39;EnjinCoin&#39;,</span>
+        <span class="c1"># &#39;EOS&#39;,</span>
+        <span class="c1"># &#39;Ergo&#39;,</span>
+        <span class="s1">&#39;Ethereum&#39;</span><span class="p">,</span>
+        <span class="c1"># &#39;EthereumClassic&#39;,</span>
+        <span class="c1"># &#39;Factom&#39;,</span>
+        <span class="c1"># &#39;Fantom&#39;,</span>
+        <span class="c1"># &#39;Fetch&#39;,</span>
+        <span class="c1"># &#39;FIBOS&#39;,</span>
+        <span class="c1"># &#39;FilecoinFutures&#39;,</span>
+        <span class="c1"># &#39;FIOProtocol&#39;,</span>
+        <span class="c1"># &#39;Firo&#39;,</span>
+        <span class="c1"># &#39;FlowDapperLabs&#39;,</span>
+        <span class="c1"># &#39;Frontier&#39;,</span>
+        <span class="c1"># &#39;FTXToken&#39;,</span>
+        <span class="c1"># &#39;FunFair&#39;,</span>
+        <span class="c1"># &#39;Fusion&#39;,</span>
+        <span class="c1"># &#39;GameCredits&#39;,</span>
+        <span class="c1"># &#39;Gas&#39;,</span>
+        <span class="c1"># &#39;Gnosis&#39;,</span>
+        <span class="c1"># &#39;GoChain&#39;,</span>
+        <span class="c1"># &#39;Golem&#39;,</span>
+        <span class="c1"># &#39;Grin&#39;,</span>
+        <span class="c1"># &#39;Groestlcoin&#39;,</span>
+        <span class="c1"># &#39;Gulden&#39;,</span>
+        <span class="c1"># &#39;GXChain&#39;,</span>
+        <span class="c1"># &#39;Handshake&#39;,</span>
+        <span class="c1"># &#39;Harmony&#39;,</span>
+        <span class="c1"># &#39;HavenProtocol&#39;,</span>
+        <span class="c1"># &#39;HederaHashgraph&#39;,</span>
+        <span class="c1"># &#39;Helium&#39;,</span>
+        <span class="c1"># &#39;HEX&#39;,</span>
+        <span class="c1"># &#39;HighPerformanceBlockchain&#39;,</span>
+        <span class="c1"># &#39;Hive&#39;,</span>
+        <span class="c1"># &#39;Holo&#39;,</span>
+        <span class="c1"># &#39;Horizen&#39;,</span>
+        <span class="c1"># &#39;HTMLCOIN&#39;,</span>
+        <span class="c1"># &#39;HyperCash&#39;,</span>
+        <span class="c1"># &#39;ICON&#39;,</span>
+        <span class="c1"># &#39;Idena&#39;,</span>
+        <span class="c1"># &#39;iExecRLC&#39;,</span>
+        <span class="c1"># &#39;InternetComputer&#39;,</span>
+        <span class="c1"># &#39;IOST&#39;,</span>
+        <span class="c1"># &#39;IOTA&#39;,</span>
+        <span class="c1"># &#39;IoTeX&#39;,</span>
+        <span class="c1"># &#39;IRISnet&#39;,</span>
+        <span class="c1"># &#39;Kadena&#39;,</span>
+        <span class="c1"># &#39;Kava&#39;,</span>
+        <span class="c1"># &#39;Kin&#39;,</span>
+        <span class="c1"># &#39;Komodo&#39;,</span>
+        <span class="c1"># &#39;Kusama&#39;,</span>
+        <span class="c1"># &#39;LBRYCredits&#39;,</span>
+        <span class="c1"># &#39;Lisk&#39;,</span>
+        <span class="c1"># &#39;Litecoin&#39;,</span>
+        <span class="c1"># &#39;LitecoinCash&#39;,</span>
+        <span class="c1"># &#39;Loki&#39;,</span>
+        <span class="c1"># &#39;Loopring&#39;,</span>
+        <span class="c1"># &#39;MaidSafeCoin&#39;,</span>
+        <span class="c1"># &#39;Maker&#39;,</span>
+        <span class="c1"># &#39;Maro&#39;,</span>
+        <span class="c1"># &#39;Massnet&#39;,</span>
+        <span class="c1"># &#39;MaticNetwork&#39;,</span>
+        <span class="c1"># &#39;MatrixAINetwork&#39;,</span>
+        <span class="c1"># &#39;MCO&#39;,</span>
+        <span class="c1"># &#39;MediBlocQRC20&#39;,</span>
+        <span class="c1"># &#39;Melon&#39;,</span>
+        <span class="c1"># &#39;Metadium&#39;,</span>
+        <span class="c1"># &#39;MetaHash&#39;,</span>
+        <span class="c1"># &#39;Metal&#39;,</span>
+        <span class="c1"># &#39;MetaverseDualchainNetworkArchitecture&#39;,</span>
+        <span class="c1"># &#39;MetaverseETP&#39;,</span>
+        <span class="c1"># &#39;MetrixCoin&#39;,</span>
+        <span class="c1"># &#39;MimbleWimbleCoin&#39;,</span>
+        <span class="c1"># &#39;MinterNetwork&#39;,</span>
+        <span class="c1"># &#39;MirrorProtocol&#39;,</span>
+        <span class="c1"># &#39;MonaCoin&#39;,</span>
+        <span class="c1"># &#39;Monero&#39;,</span>
+        <span class="c1"># &#39;Namecoin&#39;,</span>
+        <span class="c1"># &#39;Nano&#39;,</span>
+        <span class="c1"># &#39;NavCoin&#39;,</span>
+        <span class="c1"># &#39;Neblio&#39;,</span>
+        <span class="c1"># &#39;Nebulas&#39;,</span>
+        <span class="c1"># &#39;NEM&#39;,</span>
+        <span class="c1"># &#39;NEO&#39;,</span>
+        <span class="c1"># &#39;NerveNetwork&#39;,</span>
+        <span class="c1"># &#39;NervosNetwork&#39;,</span>
+        <span class="c1"># &#39;NewYorkExchange&#39;,</span>
+        <span class="c1"># &#39;Nexus&#39;,</span>
+        <span class="c1"># &#39;Nimiq&#39;,</span>
+        <span class="c1"># &#39;NKN&#39;,</span>
+        <span class="c1"># &#39;NuCypher&#39;,</span>
+        <span class="c1"># &#39;NULS&#39;,</span>
+        <span class="c1"># &#39;Numeraire&#39;,</span>
+        <span class="c1"># &#39;Nxt&#39;,</span>
+        <span class="c1"># &#39;OasisNetwork&#39;,</span>
+        <span class="c1"># &#39;Observer&#39;,</span>
+        <span class="c1"># &#39;Obyte&#39;,</span>
+        <span class="c1"># &#39;OmiseGO&#39;,</span>
+        <span class="c1"># &#39;Ondori&#39;,</span>
+        <span class="c1"># &#39;Ontology&#39;,</span>
+        <span class="c1"># &#39;Orchid&#39;,</span>
+        <span class="c1"># &#39;PACGlobal&#39;,</span>
+        <span class="c1"># &#39;PancakeSwap&#39;,</span>
+        <span class="c1"># &#39;Particl&#39;,</span>
+        <span class="c1"># &#39;PCHAIN&#39;,</span>
+        <span class="c1"># &#39;Peercoin&#39;,</span>
+        <span class="c1"># &#39;PhalaNetwork&#39;,</span>
+        <span class="c1"># &#39;PirateChain&#39;,</span>
+        <span class="c1"># &#39;PIVX&#39;,</span>
+        <span class="c1"># &#39;PLATINCOIN&#39;,</span>
+        <span class="c1"># &#39;POANetwork&#39;,</span>
+        <span class="c1"># &#39;Polis&#39;,</span>
+        <span class="c1"># &#39;Polkadot&#39;,</span>
+        <span class="c1"># &#39;Populous&#39;,</span>
+        <span class="c1"># &#39;PRIZM&#39;,</span>
+        <span class="c1"># &#39;ProjectPai&#39;,</span>
+        <span class="c1"># &#39;QASH&#39;,</span>
+        <span class="c1"># &#39;Qtum&#39;,</span>
+        <span class="c1"># &#39;Quant&#39;,</span>
+        <span class="c1"># &#39;QuantumResistantLedger&#39;,</span>
+        <span class="c1"># &#39;Ravencoin&#39;,</span>
+        <span class="c1"># &#39;Raydium&#39;,</span>
+        <span class="c1"># &#39;RChain&#39;,</span>
+        <span class="c1"># &#39;ReddCoin&#39;,</span>
+        <span class="c1"># &#39;ReserveRights&#39;,</span>
+        <span class="c1"># &#39;RINGXPLATFORM&#39;,</span>
+        <span class="c1"># &#39;RSKSmartBitcoin&#39;,</span>
+        <span class="c1"># &#39;SafexToken&#39;,</span>
+        <span class="c1"># &#39;SALT&#39;,</span>
+        <span class="c1"># &#39;Sapphire&#39;,</span>
+        <span class="c1"># &#39;ScPrime&#39;,</span>
+        <span class="c1"># &#39;Serum&#39;,</span>
+        <span class="c1"># &#39;SHIBA INU&#39;,</span>
+        <span class="c1"># &#39;Siacoin&#39;,</span>
+        <span class="c1"># &#39;SKALENetwork&#39;,</span>
+        <span class="c1"># &#39;Solana&#39;,</span>
+        <span class="c1"># &#39;SOLVE&#39;,</span>
+        <span class="c1"># &#39;Sparkpoint&#39;,</span>
+        <span class="c1"># &#39;Stacks&#39;,</span>
+        <span class="c1"># &#39;StakeCubeCoin&#39;,</span>
+        <span class="c1"># &#39;Stakenet&#39;,</span>
+        <span class="c1"># &#39;Status&#39;,</span>
+        <span class="c1"># &#39;Steem&#39;,</span>
+        <span class="c1"># &#39;SteemDollars&#39;,</span>
+        <span class="c1"># &#39;Stellar&#39;,</span>
+        <span class="c1"># &#39;Storj&#39;,</span>
+        <span class="c1"># &#39;StormX&#39;,</span>
+        <span class="c1"># &#39;Stratis&#39;,</span>
+        <span class="c1"># &#39;SuperZero&#39;,</span>
+        <span class="c1"># &#39;Sushi&#39;,</span>
+        <span class="c1"># &#39;Swipe&#39;,</span>
+        <span class="c1"># &#39;SynthetixNetworkToken&#39;,</span>
+        <span class="c1"># &#39;Syscoin&#39;,</span>
+        <span class="c1"># &#39;Tael&#39;,</span>
+        <span class="c1"># &#39;TenX&#39;,</span>
+        <span class="c1"># &#39;Terra&#39;,</span>
+        <span class="c1"># &#39;TerraKRW&#39;,</span>
+        <span class="c1"># &#39;Tether&#39;,</span>
+        <span class="c1"># &#39;Tezos&#39;,</span>
+        <span class="c1"># &#39;TheGraph&#39;,</span>
+        <span class="c1"># &#39;TheSandbox&#39;,</span>
+        <span class="c1"># &#39;THETA&#39;,</span>
+        <span class="c1"># &#39;ThetaFuel&#39;,</span>
+        <span class="c1"># &#39;THORChain&#39;,</span>
+        <span class="c1"># &#39;ThunderToken&#39;,</span>
+        <span class="c1"># &#39;TomoChain&#39;,</span>
+        <span class="c1"># &#39;Travalacom&#39;,</span>
+        <span class="c1"># &#39;TRON&#39;,</span>
+        <span class="c1"># &#39;TrueChain&#39;,</span>
+        <span class="c1"># &#39;TrueUSD&#39;,</span>
+        <span class="c1"># &#39;TrustWalletToken&#39;,</span>
+        <span class="c1"># &#39;Ubiq&#39;,</span>
+        <span class="c1"># &#39;UMA&#39;,</span>
+        <span class="c1"># &#39;Uniswap&#39;,</span>
+        <span class="c1"># &#39;USDCoin&#39;,</span>
+        <span class="c1"># &#39;Validity&#39;,</span>
+        <span class="c1"># &#39;VeChain&#39;,</span>
+        <span class="c1"># &#39;Velas&#39;,</span>
+        <span class="c1"># &#39;Verasity&#39;,</span>
+        <span class="c1"># &#39;Verge&#39;,</span>
+        <span class="c1"># &#39;Veritaseum&#39;,</span>
+        <span class="c1"># &#39;Vertcoin&#39;,</span>
+        <span class="c1"># &#39;VeThorToken&#39;,</span>
+        <span class="c1"># &#39;VITE&#39;,</span>
+        <span class="c1"># &#39;VoyagerToken&#39;,</span>
+        <span class="c1"># &#39;VSystems&#39;,</span>
+        <span class="c1"># &#39;Waltonchain&#39;,</span>
+        <span class="c1"># &#39;Wanchain&#39;,</span>
+        <span class="c1"># &#39;Waves&#39;,</span>
+        <span class="c1"># &#39;WAX&#39;,</span>
+        <span class="c1"># &#39;WaykiChain&#39;,</span>
+        <span class="c1"># &#39;WhiteCoin&#39;,</span>
+        <span class="c1"># &#39;WINk&#39;,</span>
+        <span class="c1"># &#39;Xaya&#39;,</span>
+        <span class="c1"># &#39;XeniosCoin&#39;,</span>
+        <span class="c1"># &#39;XinFinNetwork&#39;,</span>
+        <span class="c1"># &#39;XRP&#39;,</span>
+        <span class="c1"># &#39;yearnfinance&#39;,</span>
+        <span class="c1"># &#39;YOYOW&#39;,</span>
+        <span class="c1"># &#39;Zano&#39;,</span>
+        <span class="c1"># &#39;Zcash&#39;,</span>
+        <span class="c1"># &#39;ZelCash&#39;,</span>
+        <span class="c1"># &#39;Zenon&#39;,</span>
+        <span class="c1"># &#39;Zilliqa&#39;</span>
+<span class="p">]</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tuple_</span> <span class="ow">in</span> <span class="n">coin_df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">ticker</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">generate_notebook</span><span class="p">(</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_btc_comparison_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> 
+    <span class="s1">&#39;ticker&#39;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;ETH-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;LTC-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SOL1-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ADA-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;AVAX-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DOT1-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;BNB-BTC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;USDT-BTC&#39;</span>
+        <span class="p">],</span> 
+    <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;Etherum-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Litecoin-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Solana-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cardano-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Avalanche-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Polkadot-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;BinanceCoin-Bitcoin&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Tether-Bitcoin&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tuple_</span> <span class="ow">in</span> <span class="n">coin_btc_comparison_df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">ticker</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">generate_notebook</span><span class="p">(</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="generate-yaml-list">
+<h1>Generate YAML list<a class="headerlink" href="#generate-yaml-list" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;format: jb-book</span><span class="se">\n</span><span class="s2">root: pycoins/intro</span><span class="se">\n</span><span class="s2">parts:</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;- caption: Cryptocurrencies</span><span class="se">\n</span><span class="s2">  chapters:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="k">for</span> <span class="n">tuple_</span> <span class="ow">in</span> <span class="n">coin_df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">symbol</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">ticker</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;  - file: pycoins/coins/fbprophet/</span><span class="si">{ticker}</span><span class="s2">.ipynb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">symbol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;- caption: Bitcoin Swap</span><span class="se">\n</span><span class="s2">  chapters:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="k">for</span> <span class="n">tuple_</span> <span class="ow">in</span> <span class="n">coin_btc_comparison_df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">symbol</span> <span class="o">=</span> <span class="n">tuple_</span><span class="o">.</span><span class="n">ticker</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;  - file: pycoins/coins/fbprophet/</span><span class="si">{ticker}</span><span class="s2">.ipynb</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">symbol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;- caption: Overview</span><span class="se">\n</span><span class="s2">  chapters:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;  - file: pycoins/coins/fbprophet/GROWTH_ANALYSIS.ipynb</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;_toc.yml&quot;</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
