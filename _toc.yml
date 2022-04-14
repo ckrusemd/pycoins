@@ -1,0 +1,20 @@
+format: jb-book
+root: pycoins/intro
+parts:
+- caption: Cryptocurrencies
+  chapters:
+  - file: pycoins/coins/fbprophet/BTC-USD.ipynb
+  - file: pycoins/coins/fbprophet/ETH-USD.ipynb
+- caption: Bitcoin Swap
+  chapters:
+  - file: pycoins/coins/fbprophet/ETH-BTC.ipynb
+  - file: pycoins/coins/fbprophet/LTC-BTC.ipynb
+  - file: pycoins/coins/fbprophet/SOL1-BTC.ipynb
+  - file: pycoins/coins/fbprophet/ADA-BTC.ipynb
+  - file: pycoins/coins/fbprophet/AVAX-BTC.ipynb
+  - file: pycoins/coins/fbprophet/DOT1-BTC.ipynb
+  - file: pycoins/coins/fbprophet/BNB-BTC.ipynb
+  - file: pycoins/coins/fbprophet/USDT-BTC.ipynb
+- caption: Overview
+  chapters:
+  - file: pycoins/coins/fbprophet/GROWTH_ANALYSIS.ipynb
