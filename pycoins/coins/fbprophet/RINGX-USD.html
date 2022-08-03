@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7fbff84dcaf0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7ff93bfd9580&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -300,7 +300,7 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7fbff84cacd0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7ff93bfca850&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -326,25 +326,16 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7fbff51eabe0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7ff938f04670&gt;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  components = components.append(new_comp)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  components = components.append(new_comp)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  components = components.append(new_comp)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Process ForkProcess-5:
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Process ForkProcess-6:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
@@ -354,8 +345,42 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
     self.run()
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/multiprocessing/process.py&quot;, line 315, in _bootstrap
+    self.run()
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
     self._target(*self._args, **self._kwargs)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/multiprocessing/process.py&quot;, line 108, in run
+    self._target(*self._args, **self._kwargs)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/multiprocessing/queues.py&quot;, line 116, in get
+    return _ForkingPickler.loads(res)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;pandas/_libs/internals.pyx&quot;, line 573, in pandas._libs.internals._unpickle_block
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/local/lib/python3.8/dist-packages/pandas/core/internals/blocks.py&quot;, line 2041, in new_block
+    def new_block(values, placement, *, ndim: int) -&gt; Block:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/usr/lib/python3.8/multiprocessing/queues.py&quot;, line 97, in get
+    res = self._recv_bytes()
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
