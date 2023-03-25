@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f2e792b1820&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f8dd953fc10&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -300,7 +300,7 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f2e792a5940&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f8dd9532df0&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -318,163 +318,12 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
   components = components.append(new_comp)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">collect_tune_and_predict</span><span class="p">(</span><span class="s1">&#39;RINGX-USD&#39;</span><span class="p">,</span><span class="n">n_ahead</span> <span class="o">=</span> <span class="mi">365</span><span class="p">)</span>
-
-<span class="nn">File /github/workspace/pycoins/coins/fbprophet/functions.py:89,</span> in <span class="ni">collect_tune_and_predict</span><span class="nt">(item, n_ahead)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="k">with</span> <span class="n">suppress_stdout_stderr</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">89</span>         <span class="n">m</span> <span class="o">=</span> <span class="n">Prophet</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Fit model with given params</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>         <span class="n">df_cv</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">cutoffs</span><span class="o">=</span><span class="n">cutoffs</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="s1">&#39;30 days&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="s2">&quot;processes&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>         <span class="n">df_p</span> <span class="o">=</span> <span class="n">performance_metrics</span><span class="p">(</span><span class="n">df_cv</span><span class="p">,</span> <span class="n">rolling_window</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:1111,</span> in <span class="ni">Prophet.fit</span><span class="nt">(self, df, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Dataframe has less than 2 non-NaN rows.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1109</span> <span class="bp">self</span><span class="o">.</span><span class="n">history_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ds&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1111</span> <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_dataframe</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">initialize_scales</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">history</span>
-<span class="g g-Whitespace">   </span><span class="mi">1113</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_auto_seasonalities</span><span class="p">()</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:301,</span> in <span class="ni">Prophet.setup_dataframe</span><span class="nt">(self, df, initialize_scales)</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;ds&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">301</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialize_scales</span><span class="p">(</span><span class="n">initialize_scales</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logistic_floor</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">if</span> <span class="s1">&#39;floor&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:345,</span> in <span class="ni">Prophet.initialize_scales</span><span class="nt">(self, initialize_scales, df)</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="n">floor</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="ne">--&gt; </span><span class="mi">345</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scale</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">floor</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scale</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span>     <span class="bp">self</span><span class="o">.</span><span class="n">y_scale</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/generic.py:11212,</span> in <span class="ni">NDFrame._add_numeric_operations.&lt;locals&gt;.max</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11192</span> <span class="nd">@doc</span><span class="p">(</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">  </span><span class="mi">11193</span>     <span class="n">_num_doc</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11194</span>     <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Return the maximum of the values over the requested axis.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11210</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11211</span> <span class="p">):</span>
-<span class="ne">&gt; </span><span class="mi">11212</span>     <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/generic.py:10669,</span> in <span class="ni">NDFrame.max</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10661</span> <span class="k">def</span> <span class="nf">max</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10662</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10663</span>     <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">lib</span><span class="o">.</span><span class="n">NoDefault</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10667</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10668</span> <span class="p">):</span>
-<span class="ne">&gt; </span><span class="mi">10669</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10670</span>         <span class="s2">&quot;max&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10671</span>         <span class="n">nanops</span><span class="o">.</span><span class="n">nanmax</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10672</span>         <span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10673</span>         <span class="n">skipna</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10674</span>         <span class="n">level</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10675</span>         <span class="n">numeric_only</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10676</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10677</span>     <span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/generic.py:10639,</span> in <span class="ni">NDFrame._stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10629</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10630</span>         <span class="s2">&quot;Using the level keyword in DataFrame and Series aggregations is &quot;</span>
-<span class="g g-Whitespace">  </span><span class="mi">10631</span>         <span class="s2">&quot;deprecated and will be removed in a future version. Use groupby &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10634</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">  </span><span class="mi">10635</span>     <span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10636</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10637</span>         <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">10638</span>     <span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">10639</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10640</span>     <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">10641</span> <span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/series.py:4471,</span> in <span class="ni">Series._reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4467</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">4468</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not implement </span><span class="si">{</span><span class="n">kwd_name</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4469</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4470</span> <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">4471</span>     <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/nanops.py:155,</span> in <span class="ni">bottleneck_switch.__call__.&lt;locals&gt;.f</span><span class="nt">(values, axis, skipna, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">155</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/nanops.py:410,</span> in <span class="ni">_datetimelike_compat.&lt;locals&gt;.new_func</span><span class="nt">(values, axis, skipna, mask, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="k">if</span> <span class="n">datetimelike</span> <span class="ow">and</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">410</span> <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="k">if</span> <span class="n">datetimelike</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_wrap_results</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">orig_values</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">iNaT</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/nanops.py:1032,</span> in <span class="ni">_nanminmax.&lt;locals&gt;.reduction</span><span class="nt">(values, axis, skipna, mask)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span> <span class="nd">@bottleneck_switch</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;nan&quot;</span> <span class="o">+</span> <span class="n">meth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="nd">@_datetimelike_compat</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="k">def</span> <span class="nf">reduction</span><span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1029</span>     <span class="n">mask</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1030</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dtype</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">dtype_max</span><span class="p">,</span> <span class="n">fill_value</span> <span class="o">=</span> <span class="n">_get_values</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1033</span>         <span class="n">values</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">fill_value_typ</span><span class="o">=</span><span class="n">fill_value_typ</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span>
-<span class="g g-Whitespace">   </span><span class="mi">1034</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1036</span>     <span class="k">if</span> <span class="p">(</span><span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">values</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1037</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/nanops.py:308,</span> in <span class="ni">_get_values</span><span class="nt">(values, skipna, fill_value, fill_value_typ, mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span> <span class="c1"># error: Incompatible types in assignment (expression has type &quot;Union[Any,</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="c1"># Union[ExtensionArray, ndarray]]&quot;, variable has type &quot;ndarray&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span> <span class="n">values</span> <span class="o">=</span> <span class="n">extract_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">extract_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore[assignment]</span>
-<span class="ne">--&gt; </span><span class="mi">308</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">_maybe_get_mask</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">dtype</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="n">datetimelike</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/nanops.py:252,</span> in <span class="ni">_maybe_get_mask</span><span class="nt">(values, skipna, mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>         <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="k">if</span> <span class="n">skipna</span> <span class="ow">or</span> <span class="n">needs_i8_conversion</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">252</span>         <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">return</span> <span class="n">mask</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/dtypes/missing.py:143,</span> in <span class="ni">isna</span><span class="nt">(obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="k">def</span> <span class="nf">isna</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="sd">     Detect missing values for an array-like object.</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="sd">     Name: 1, dtype: bool</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">143</span>     <span class="k">return</span> <span class="n">_isna</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/dtypes/missing.py:172,</span> in <span class="ni">_isna</span><span class="nt">(obj, inf_as_na)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>     <span class="k">return</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">ABCExtensionArray</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">172</span>     <span class="k">return</span> <span class="n">_isna_array</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">inf_as_na</span><span class="o">=</span><span class="n">inf_as_na</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ABCIndex</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="c1"># Try to use cached isna, which also short-circuits for integer dtypes</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="c1">#  and avoids materializing RangeIndex._values</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">_can_hold_na</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/dtypes/missing.py:255,</span> in <span class="ni">_isna_array</span><span class="nt">(values, inf_as_na)</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span> <span class="k">elif</span> <span class="n">is_string_or_object_np_dtype</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_isna_string_dtype</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">inf_as_na</span><span class="o">=</span><span class="n">inf_as_na</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">255</span> <span class="k">elif</span> <span class="n">needs_i8_conversion</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span>     <span class="c1"># this is the NaT pattern</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">iNaT</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/dtypes/common.py:1184,</span> in <span class="ni">needs_i8_conversion</span><span class="nt">(arr_or_dtype)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="k">if</span> <span class="n">arr_or_dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="k">return</span> <span class="kc">False</span>
-<span class="ne">-&gt; </span><span class="mi">1184</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arr_or_dtype</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">ExtensionDtype</span><span class="p">)):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="c1"># fastpath</span>
-<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="n">dtype</span> <span class="o">=</span> <span class="n">arr_or_dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span>     <span class="k">return</span> <span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dtype</span><span class="o">.</span><span class="n">type</span> <span class="ow">is</span> <span class="n">Period</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Disabling daily seasonality. Run prophet with daily_seasonality=True to override this.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  components = components.append(new_comp)
+WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
 </div>
