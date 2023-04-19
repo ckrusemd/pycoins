@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7fba0f071a60&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f65b1f82640&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -300,7 +300,7 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to Newton.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7fba0f066f40&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Applying in parallel with &lt;concurrent.futures.process.ProcessPoolExecutor object at 0x7f65b1f73d90&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
@@ -319,6 +319,10 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:fbprophet:Disabling daily seasonality. Run prophet with daily_seasonality=True to override this.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:891: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  components = components.append(new_comp)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -342,69 +346,68 @@ WARNING:fbprophet.models:Optimization terminated abnormally. Falling back to New
 <span class="g g-Whitespace">   </span><span class="mi">1116</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_component_cols</span> <span class="o">=</span> <span class="n">component_cols</span>
 <span class="g g-Whitespace">   </span><span class="mi">1117</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_modes</span> <span class="o">=</span> <span class="n">modes</span>
 
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:765,</span> in <span class="ni">Prophet.make_all_seasonality_features</span><span class="nt">(self, df)</span>
-<span class="g g-Whitespace">    </span><span class="mi">763</span> <span class="c1"># Seasonality features</span>
-<span class="g g-Whitespace">    </span><span class="mi">764</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">props</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">seasonalities</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">765</span>     <span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_seasonality_features</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">766</span>         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ds&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">767</span>         <span class="n">props</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">768</span>         <span class="n">props</span><span class="p">[</span><span class="s1">&#39;fourier_order&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span>         <span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">771</span>     <span class="k">if</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;condition_name&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">772</span>         <span class="n">features</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="n">props</span><span class="p">[</span><span class="s1">&#39;condition_name&#39;</span><span class="p">]]]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:801,</span> in <span class="ni">Prophet.make_all_seasonality_features</span><span class="nt">(self, df)</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">prior_scales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="n">seasonal_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">seasonal_features</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">801</span> <span class="n">component_cols</span><span class="p">,</span> <span class="n">modes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regressor_column_matrix</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="n">seasonal_features</span><span class="p">,</span> <span class="n">modes</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span> <span class="k">return</span> <span class="n">seasonal_features</span><span class="p">,</span> <span class="n">prior_scales</span><span class="p">,</span> <span class="n">component_cols</span><span class="p">,</span> <span class="n">modes</span>
 
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:463,</span> in <span class="ni">Prophet.make_seasonality_features</span><span class="nt">(cls, dates, period, series_order, prefix)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="n">features</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">series_order</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_delim_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nn">    461     for i</span> in <span class="ni">range</span><span class="nt">(features.shape[1])</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">463</span> <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:838,</span> in <span class="ni">Prophet.regressor_column_matrix</span><span class="nt">(self, seasonal_features, modes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">836</span> <span class="c1"># Add totals additive and multiplicative components, and regressors</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span> <span class="k">for</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;additive&#39;</span><span class="p">,</span> <span class="s1">&#39;multiplicative&#39;</span><span class="p">]:</span>
+<span class="ne">--&gt; </span><span class="mi">838</span>     <span class="n">components</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_group_component</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">839</span>         <span class="n">components</span><span class="p">,</span> <span class="n">mode</span> <span class="o">+</span> <span class="s1">&#39;_terms&#39;</span><span class="p">,</span> <span class="n">modes</span><span class="p">[</span><span class="n">mode</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">840</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">841</span>     <span class="n">regressors_by_mode</span> <span class="o">=</span> <span class="p">[</span>
+<span class="nn">    842         r for r, props</span> in <span class="ni">self.extra_regressors.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">843</span>         <span class="k">if</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>     <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span>     <span class="n">components</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_group_component</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="n">components</span><span class="p">,</span> <span class="s1">&#39;extra_regressors_&#39;</span> <span class="o">+</span> <span class="n">mode</span><span class="p">,</span> <span class="n">regressors_by_mode</span><span class="p">)</span>
 
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/frame.py:694,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>         <span class="n">mgr</span> <span class="o">=</span> <span class="n">dict_to_mgr</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span>             <span class="c1"># error: Item &quot;ndarray&quot; of &quot;Union[ndarray, Series, Index]&quot; has no</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span>             <span class="c1"># attribute &quot;name&quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">691</span>             <span class="n">typ</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">692</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">693</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">694</span>         <span class="n">mgr</span> <span class="o">=</span> <span class="n">ndarray_to_mgr</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">695</span>             <span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">696</span>             <span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span>             <span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">698</span>             <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">699</span>             <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span>             <span class="n">typ</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="c1"># For data is list-like, or Iterable (will consume into list)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="k">elif</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:888,</span> in <span class="ni">Prophet.add_group_component</span><span class="nt">(self, components, name, group)</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span> <span class="sd">&quot;&quot;&quot;Adds a component with given name that contains all of the components</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span><span class="sd"> in group.</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span><span class="sd"> Dataframe with components.</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span> <span class="n">new_comp</span> <span class="o">=</span> <span class="n">components</span><span class="p">[</span><span class="n">components</span><span class="p">[</span><span class="s1">&#39;component&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">group</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">888</span> <span class="n">group_cols</span> <span class="o">=</span> <span class="n">new_comp</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>     <span class="n">new_comp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;col&#39;</span><span class="p">:</span> <span class="n">group_cols</span><span class="p">,</span> <span class="s1">&#39;component&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">})</span>
 
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/internals/construction.py:351,</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span> <span class="c1"># _prep_ndarray ensures that values.ndim == 2 at this point</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">_get_axes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">351</span> <span class="n">_check_values_indices_shape_match</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/frame.py:3474,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3472</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">MultiIndex</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3473</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3474</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_item_cache</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3476</span> <span class="c1"># Do we have a slicer (on rows)?</span>
+<span class="g g-Whitespace">   </span><span class="mi">3477</span> <span class="n">indexer</span> <span class="o">=</span> <span class="n">convert_to_index_sliceable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 
-<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/internals/construction.py:407,</span> in <span class="ni">_check_values_indices_shape_match</span><span class="nt">(values, index, columns)</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="n">block_values</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="k">return</span> <span class="n">create_block_manager_from_blocks</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>         <span class="n">block_values</span><span class="p">,</span> <span class="p">[</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="p">],</span> <span class="n">verify_integrity</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">407</span> <span class="k">def</span> <span class="nf">_check_values_indices_shape_match</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">values</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="n">Index</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="n">Index</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="sd">     Check that the shape implied by our axes matches the actual shape of the</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="sd">     data.</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="k">if</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span> <span class="ow">or</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="c1"># Could let this raise in Block constructor, but we get a more</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span>         <span class="c1">#  helpful exception message this way.</span>
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/frame.py:3932,</span> in <span class="ni">DataFrame._get_item_cache</span><span class="nt">(self, item)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3927</span> <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3928</span>     <span class="c1"># All places that call _get_item_cache have unique columns,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3929</span>     <span class="c1">#  pending resolution of GH#33047</span>
+<span class="g g-Whitespace">   </span><span class="mi">3931</span>     <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3932</span>     <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ixs</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3934</span>     <span class="n">cache</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">   </span><span class="mi">3936</span>     <span class="c1"># for a chain</span>
+
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/frame.py:3441,</span> in <span class="ni">DataFrame._ixs</span><span class="nt">(self, i, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3437</span> <span class="c1"># icol</span>
+<span class="g g-Whitespace">   </span><span class="mi">3438</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3439</span>     <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">3441</span>     <span class="n">col_mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">iget</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3442</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_box_col_values</span><span class="p">(</span><span class="n">col_mgr</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3444</span>     <span class="c1"># this is a cached value, mark it so</span>
+
+<span class="nn">File /usr/local/lib/python3.8/dist-packages/pandas/core/internals/managers.py:1025,</span> in <span class="ni">BlockManager.iget</span><span class="nt">(self, i)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="c1"># shortcut for select a single-dim from a 2-dim BM</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">bp</span> <span class="o">=</span> <span class="n">BlockPlacement</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)))</span>
+<span class="ne">-&gt; </span><span class="mi">1025</span> <span class="n">nb</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">block</span><span class="p">)(</span><span class="n">values</span><span class="p">,</span> <span class="n">placement</span><span class="o">=</span><span class="n">bp</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">SingleBlockManager</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
