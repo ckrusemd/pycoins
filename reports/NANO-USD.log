@@ -1,4 +1,15 @@
 Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 730, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 96, in ensure_async
+    result = await obj
+  File "/usr/local/lib/python3.8/dist-packages/jupyter_client/channels.py", line 230, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1204, in execute
@@ -11,131 +22,17 @@ Traceback (most recent call last):
     return future.result()
   File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 965, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 949, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 754, in _async_poll_for_reply
+    await self._async_handle_timeout(timeout, cell)
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 801, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
     from functions import *
     collect_tune_and_predict('NANO-USD',n_ahead = 365)
-------------------
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31m_RemoteTraceback[0m                          Traceback (most recent call last)
-[0;31m_RemoteTraceback[0m: 
-"""
-Traceback (most recent call last):
-  File "/usr/lib/python3.8/concurrent/futures/process.py", line 239, in _process_worker
-    r = call_item.fn(*call_item.args, **call_item.kwargs)
-  File "/usr/lib/python3.8/concurrent/futures/process.py", line 198, in _process_chunk
-    return [fn(*args) for args in chunk]
-  File "/usr/lib/python3.8/concurrent/futures/process.py", line 198, in <listcomp>
-    return [fn(*args) for args in chunk]
-  File "/usr/local/lib/python3.8/dist-packages/fbprophet/diagnostics.py", line 223, in single_cutoff_forecast
-    raise Exception(
-Exception: Less than two datapoints before cutoff. Increase initial window.
-"""
-
-The above exception was the direct cause of the following exception:
-
-[0;31mException[0m                                 Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
-[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfunctions[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[0;32m----> 2[0m [43mcollect_tune_and_predict[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mNANO-USD[39;49m[38;5;124;43m'[39;49m[43m,[49m[43mn_ahead[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;241;43m365[39;49m[43m)[49m
-
-File [0;32m/github/workspace/pycoins/coins/fbprophet/functions.py:90[0m, in [0;36mcollect_tune_and_predict[0;34m(item, n_ahead)[0m
-[1;32m     88[0m [38;5;28;01mwith[39;00m suppress_stdout_stderr():
-[1;32m     89[0m     m [38;5;241m=[39m Prophet([38;5;241m*[39m[38;5;241m*[39mparams)[38;5;241m.[39mfit(data)  [38;5;66;03m# Fit model with given params[39;00m
-[0;32m---> 90[0m     df_cv [38;5;241m=[39m [43mcross_validation[49m[43m([49m[43mm[49m[43m,[49m[43m [49m[43mcutoffs[49m[38;5;241;43m=[39;49m[43mcutoffs[49m[43m,[49m[43m [49m[43mhorizon[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m30 days[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mparallel[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mprocesses[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m     91[0m     df_p [38;5;241m=[39m performance_metrics(df_cv, rolling_window[38;5;241m=[39m[38;5;241m1[39m)
-[1;32m     92[0m     rmses[38;5;241m.[39mappend(df_p[[38;5;124m'[39m[38;5;124mrmse[39m[38;5;124m'[39m][38;5;241m.[39mvalues[[38;5;241m0[39m])
-
-File [0;32m/usr/local/lib/python3.8/dist-packages/fbprophet/diagnostics.py:193[0m, in [0;36mcross_validation[0;34m(model, horizon, period, initial, parallel, cutoffs)[0m
-[1;32m    187[0m     predicts [38;5;241m=[39m [
-[1;32m    188[0m         single_cutoff_forecast(df, model, cutoff, horizon, predict_columns)
-[1;32m    189[0m         [38;5;28;01mfor[39;00m cutoff [38;5;129;01min[39;00m tqdm(cutoffs)
-[1;32m    190[0m     ]
-[1;32m    192[0m [38;5;66;03m# Combine all predicted pd.DataFrame into one pd.DataFrame[39;00m
-[0;32m--> 193[0m [38;5;28;01mreturn[39;00m [43mpd[49m[38;5;241;43m.[39;49m[43mconcat[49m[43m([49m[43mpredicts[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m)[49m[38;5;241m.[39mreset_index(drop[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-
-File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/util/_decorators.py:311[0m, in [0;36mdeprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper[0;34m(*args, **kwargs)[0m
-[1;32m    305[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(args) [38;5;241m>[39m num_allow_args:
-[1;32m    306[0m     warnings[38;5;241m.[39mwarn(
-[1;32m    307[0m         msg[38;5;241m.[39mformat(arguments[38;5;241m=[39marguments),
-[1;32m    308[0m         [38;5;167;01mFutureWarning[39;00m,
-[1;32m    309[0m         stacklevel[38;5;241m=[39mstacklevel,
-[1;32m    310[0m     )
-[0;32m--> 311[0m [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-
-File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/reshape/concat.py:347[0m, in [0;36mconcat[0;34m(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)[0m
-[1;32m    143[0m [38;5;129m@deprecate_nonkeyword_arguments[39m(version[38;5;241m=[39m[38;5;28;01mNone[39;00m, allowed_args[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mobjs[39m[38;5;124m"[39m])
-[1;32m    144[0m [38;5;28;01mdef[39;00m [38;5;21mconcat[39m(
-[1;32m    145[0m     objs: Iterable[NDFrame] [38;5;241m|[39m Mapping[Hashable, NDFrame],
-[0;32m   (...)[0m
-[1;32m    154[0m     copy: [38;5;28mbool[39m [38;5;241m=[39m [38;5;28;01mTrue[39;00m,
-[1;32m    155[0m ) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m Series:
-[1;32m    156[0m     [38;5;124;03m"""[39;00m
-[1;32m    157[0m [38;5;124;03m    Concatenate pandas objects along a particular axis with optional set logic[39;00m
-[1;32m    158[0m [38;5;124;03m    along the other axes.[39;00m
-[0;32m   (...)[0m
-[1;32m    345[0m [38;5;124;03m    ValueError: Indexes have overlapping values: ['a'][39;00m
-[1;32m    346[0m [38;5;124;03m    """[39;00m
-[0;32m--> 347[0m     op [38;5;241m=[39m [43m_Concatenator[49m[43m([49m
-[1;32m    348[0m [43m        [49m[43mobjs[49m[43m,[49m
-[1;32m    349[0m [43m        [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m
-[1;32m    350[0m [43m        [49m[43mignore_index[49m[38;5;241;43m=[39;49m[43mignore_index[49m[43m,[49m
-[1;32m    351[0m [43m        [49m[43mjoin[49m[38;5;241;43m=[39;49m[43mjoin[49m[43m,[49m
-[1;32m    352[0m [43m        [49m[43mkeys[49m[38;5;241;43m=[39;49m[43mkeys[49m[43m,[49m
-[1;32m    353[0m [43m        [49m[43mlevels[49m[38;5;241;43m=[39;49m[43mlevels[49m[43m,[49m
-[1;32m    354[0m [43m        [49m[43mnames[49m[38;5;241;43m=[39;49m[43mnames[49m[43m,[49m
-[1;32m    355[0m [43m        [49m[43mverify_integrity[49m[38;5;241;43m=[39;49m[43mverify_integrity[49m[43m,[49m
-[1;32m    356[0m [43m        [49m[43mcopy[49m[38;5;241;43m=[39;49m[43mcopy[49m[43m,[49m
-[1;32m    357[0m [43m        [49m[43msort[49m[38;5;241;43m=[39;49m[43msort[49m[43m,[49m
-[1;32m    358[0m [43m    [49m[43m)[49m
-[1;32m    360[0m     [38;5;28;01mreturn[39;00m op[38;5;241m.[39mget_result()
-
-File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/reshape/concat.py:401[0m, in [0;36m_Concatenator.__init__[0;34m(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)[0m
-[1;32m    399[0m     objs [38;5;241m=[39m [objs[k] [38;5;28;01mfor[39;00m k [38;5;129;01min[39;00m keys]
-[1;32m    400[0m [38;5;28;01melse[39;00m:
-[0;32m--> 401[0m     objs [38;5;241m=[39m [38;5;28;43mlist[39;49m[43m([49m[43mobjs[49m[43m)[49m
-[1;32m    403[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(objs) [38;5;241m==[39m [38;5;241m0[39m:
-[1;32m    404[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mNo objects to concatenate[39m[38;5;124m"[39m)
-
-File [0;32m/usr/lib/python3.8/concurrent/futures/process.py:484[0m, in [0;36m_chain_from_iterable_of_lists[0;34m(iterable)[0m
-[1;32m    478[0m [38;5;28;01mdef[39;00m [38;5;21m_chain_from_iterable_of_lists[39m(iterable):
-[1;32m    479[0m     [38;5;124;03m"""[39;00m
-[1;32m    480[0m [38;5;124;03m    Specialized implementation of itertools.chain.from_iterable.[39;00m
-[1;32m    481[0m [38;5;124;03m    Each item in *iterable* should be a list.  This function is[39;00m
-[1;32m    482[0m [38;5;124;03m    careful not to keep references to yielded objects.[39;00m
-[1;32m    483[0m [38;5;124;03m    """[39;00m
-[0;32m--> 484[0m     [38;5;28;01mfor[39;00m element [38;5;129;01min[39;00m iterable:
-[1;32m    485[0m         element[38;5;241m.[39mreverse()
-[1;32m    486[0m         [38;5;28;01mwhile[39;00m element:
-
-File [0;32m/usr/lib/python3.8/concurrent/futures/_base.py:619[0m, in [0;36mExecutor.map.<locals>.result_iterator[0;34m()[0m
-[1;32m    616[0m [38;5;28;01mwhile[39;00m fs:
-[1;32m    617[0m     [38;5;66;03m# Careful not to keep a reference to the popped future[39;00m
-[1;32m    618[0m     [38;5;28;01mif[39;00m timeout [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[0;32m--> 619[0m         [38;5;28;01myield[39;00m [43mfs[49m[38;5;241;43m.[39;49m[43mpop[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mresult[49m[43m([49m[43m)[49m
-[1;32m    620[0m     [38;5;28;01melse[39;00m:
-[1;32m    621[0m         [38;5;28;01myield[39;00m fs[38;5;241m.[39mpop()[38;5;241m.[39mresult(end_time [38;5;241m-[39m time[38;5;241m.[39mmonotonic())
-
-File [0;32m/usr/lib/python3.8/concurrent/futures/_base.py:444[0m, in [0;36mFuture.result[0;34m(self, timeout)[0m
-[1;32m    442[0m     [38;5;28;01mraise[39;00m CancelledError()
-[1;32m    443[0m [38;5;28;01melif[39;00m [38;5;28mself[39m[38;5;241m.[39m_state [38;5;241m==[39m FINISHED:
-[0;32m--> 444[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m__get_result[49m[43m([49m[43m)[49m
-[1;32m    445[0m [38;5;28;01melse[39;00m:
-[1;32m    446[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTimeoutError[39;00m()
-
-File [0;32m/usr/lib/python3.8/concurrent/futures/_base.py:389[0m, in [0;36mFuture.__get_result[0;34m(self)[0m
-[1;32m    387[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_exception:
-[1;32m    388[0m     [38;5;28;01mtry[39;00m:
-[0;32m--> 389[0m         [38;5;28;01mraise[39;00m [38;5;28mself[39m[38;5;241m.[39m_exception
-[1;32m    390[0m     [38;5;28;01mfinally[39;00m:
-[1;32m    391[0m         [38;5;66;03m# Break a reference cycle with the exception in self._exception[39;00m
-[1;32m    392[0m         [38;5;28mself[39m [38;5;241m=[39m [38;5;28;01mNone[39;00m
-
-[0;31mException[0m: Less than two datapoints before cutoff. Increase initial window.
-Exception: Less than two datapoints before cutoff. Increase initial window.
+-------------------
 
