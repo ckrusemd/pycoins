@@ -22,25 +22,34 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
+[0;31mIndexError[0m                                Traceback (most recent call last)
 Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
 [1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfunctions[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
 [0;32m----> 2[0m [43mcollect_tune_and_predict[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mDOT1-USD[39;49m[38;5;124;43m'[39;49m[43m,[49m[43mn_ahead[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;241;43m365[39;49m[43m)[49m
 
-File [0;32m/github/workspace/pycoins/coins/fbprophet/functions.py:89[0m, in [0;36mcollect_tune_and_predict[0;34m(item, n_ahead)[0m
+File [0;32m/github/workspace/pycoins/coins/fbprophet/functions.py:85[0m, in [0;36mcollect_tune_and_predict[0;34m(item, n_ahead)[0m
+[1;32m     83[0m rmses [38;5;241m=[39m [] 
+[1;32m     84[0m [38;5;66;03m# Use cross validation to evaluate all parameters[39;00m
+[0;32m---> 85[0m latest_date [38;5;241m=[39m [43mdata[49m[38;5;241;43m.[39;49m[43mtail[49m[43m([49m[38;5;241;43m1[39;49m[43m)[49m[38;5;241;43m.[39;49m[43miloc[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[[38;5;124m'[39m[38;5;124mds[39m[38;5;124m'[39m]
+[1;32m     86[0m cutoffs [38;5;241m=[39m [ subtract_one_month( latest_date ) ]
 [1;32m     87[0m [38;5;28;01mfor[39;00m params [38;5;129;01min[39;00m all_params:
-[1;32m     88[0m     [38;5;28;01mwith[39;00m suppress_stdout_stderr():
-[0;32m---> 89[0m         m [38;5;241m=[39m [43mProphet[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mparams[49m[43m)[49m[38;5;241;43m.[39;49m[43mfit[49m[43m([49m[43mdata[49m[43m)[49m  [38;5;66;03m# Fit model with given params[39;00m
-[1;32m     90[0m         df_cv [38;5;241m=[39m cross_validation(m, cutoffs[38;5;241m=[39mcutoffs, horizon[38;5;241m=[39m[38;5;124m'[39m[38;5;124m30 days[39m[38;5;124m'[39m, parallel[38;5;241m=[39m[38;5;124m"[39m[38;5;124mprocesses[39m[38;5;124m"[39m)
-[1;32m     91[0m         df_p [38;5;241m=[39m performance_metrics(df_cv, rolling_window[38;5;241m=[39m[38;5;241m1[39m)
 
-File [0;32m/usr/local/lib/python3.8/dist-packages/fbprophet/forecaster.py:1108[0m, in [0;36mProphet.fit[0;34m(self, df, **kwargs)[0m
-[1;32m   1106[0m history [38;5;241m=[39m df[df[[38;5;124m'[39m[38;5;124my[39m[38;5;124m'[39m][38;5;241m.[39mnotnull()][38;5;241m.[39mcopy()
-[1;32m   1107[0m [38;5;28;01mif[39;00m history[38;5;241m.[39mshape[[38;5;241m0[39m] [38;5;241m<[39m [38;5;241m2[39m:
-[0;32m-> 1108[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m'[39m[38;5;124mDataframe has less than 2 non-NaN rows.[39m[38;5;124m'[39m)
-[1;32m   1109[0m [38;5;28mself[39m[38;5;241m.[39mhistory_dates [38;5;241m=[39m pd[38;5;241m.[39mto_datetime(pd[38;5;241m.[39mSeries(df[[38;5;124m'[39m[38;5;124mds[39m[38;5;124m'[39m][38;5;241m.[39munique(), name[38;5;241m=[39m[38;5;124m'[39m[38;5;124mds[39m[38;5;124m'[39m))[38;5;241m.[39msort_values()
-[1;32m   1111[0m history [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39msetup_dataframe(history, initialize_scales[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/indexing.py:967[0m, in [0;36m_LocationIndexer.__getitem__[0;34m(self, key)[0m
+[1;32m    964[0m axis [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39maxis [38;5;129;01mor[39;00m [38;5;241m0[39m
+[1;32m    966[0m maybe_callable [38;5;241m=[39m com[38;5;241m.[39mapply_if_callable(key, [38;5;28mself[39m[38;5;241m.[39mobj)
+[0;32m--> 967[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_getitem_axis[49m[43m([49m[43mmaybe_callable[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m)[49m
 
-[0;31mValueError[0m: Dataframe has less than 2 non-NaN rows.
-ValueError: Dataframe has less than 2 non-NaN rows.
+File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/indexing.py:1520[0m, in [0;36m_iLocIndexer._getitem_axis[0;34m(self, key, axis)[0m
+[1;32m   1517[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m([38;5;124m"[39m[38;5;124mCannot index by location index with a non-integer key[39m[38;5;124m"[39m)
+[1;32m   1519[0m [38;5;66;03m# validate the location[39;00m
+[0;32m-> 1520[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_validate_integer[49m[43m([49m[43mkey[49m[43m,[49m[43m [49m[43maxis[49m[43m)[49m
+[1;32m   1522[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mobj[38;5;241m.[39m_ixs(key, axis[38;5;241m=[39maxis)
+
+File [0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/indexing.py:1452[0m, in [0;36m_iLocIndexer._validate_integer[0;34m(self, key, axis)[0m
+[1;32m   1450[0m len_axis [38;5;241m=[39m [38;5;28mlen[39m([38;5;28mself[39m[38;5;241m.[39mobj[38;5;241m.[39m_get_axis(axis))
+[1;32m   1451[0m [38;5;28;01mif[39;00m key [38;5;241m>[39m[38;5;241m=[39m len_axis [38;5;129;01mor[39;00m key [38;5;241m<[39m [38;5;241m-[39mlen_axis:
+[0;32m-> 1452[0m     [38;5;28;01mraise[39;00m [38;5;167;01mIndexError[39;00m([38;5;124m"[39m[38;5;124msingle positional indexer is out-of-bounds[39m[38;5;124m"[39m)
+
+[0;31mIndexError[0m: single positional indexer is out-of-bounds
+IndexError: single positional indexer is out-of-bounds
 
